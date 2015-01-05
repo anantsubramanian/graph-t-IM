@@ -1,0 +1,5 @@
+Headphones 0 8
+Sports_Shoes 1 7
+E-Reader 2 4
+DSLR 3 3
+Cooking_Oven 4 2
