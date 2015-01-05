@@ -12,24 +12,24 @@ How to run the algorithm(s):
 
 1. First the data must be fetched from a Social Networking Website. Scripts are provided in the Data Collection folder to fetch the data from Facebook using the Facebook Graph API. The pipeline is:
 
-1_facebook_get_friends.py - to fetch the like pages of all the friends of a person.
+    (a.) 1_facebook_get_friends.py - to fetch the like pages of all the friends of a person.
 
-2_accumulate_likes.py - to get the set of all like pages (removing duplicates).
+    (b.) 2_accumulate_likes.py - to get the set of all like pages (removing duplicates).
 
-3_fetch_likepages_data.py - to fetch the content of all the like pages to be used for classification later.
+    (c.) 3_fetch_likepages_data.py - to fetch the content of all the like pages to be used for classification later.
 
-4_facebook_get_adjlist.py - to create adjacency lists for all the nodes in the sub-network we are focusing on.
+    (d.) 4_facebook_get_adjlist.py - to create adjacency lists for all the nodes in the sub-network we are focusing on.
 
 
 2. The fetched data must now be processed to convert the data into the format accepted by the algorithm. These are done for the data from step 1 using the following scripts/programs:
 
-1_like_classifier.py - to classify each of the fetched like pages as belonging to one of the products (or none) mentioned in Products.txt (see the sample file provided) based on the overall term frequency of all the terms mentioned against the product.
+    (a.) 1_like_classifier.py - to classify each of the fetched like pages as belonging to one of the products (or none) mentioned in Products.txt (see the sample file provided) based on the overall term frequency of all the terms mentioned against the product.
 
-2_user_likes_adjlists.py - to associate like pages with users i.e. to create adjacency lists between users and like pages.
+    (b.) 2_user_likes_adjlists.py - to associate like pages with users i.e. to create adjacency lists between users and like pages.
 
-3_calculate_jaccard_values.cpp - to compute the Jaccard coefficients between adjacent users for each of the products based on the classification previously done.
+    (c.) 3_calculate_jaccard_values.cpp - to compute the Jaccard coefficients between adjacent users for each of the products based on the classification previously done.
 
-4_weighted_adjacency.cpp - to use the Jaccard values computed above to weigh the edges of the Social Network.
+    (d.) 4_weighted_adjacency.cpp - to use the Jaccard values computed above to weigh the edges of the Social Network.
 
 
 3. Adjust the Input Parameters (Name of the product, product ID, target number of seeds) and run the two algorithms by selecting the number of runs of the Oracle (more runs = more accuracy, refer to the paper for further details).
